@@ -71,9 +71,8 @@ const Services = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <Button 
-            size="lg"
-            className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 mb-4"
+          <Button
+            className="btn-cta !px-38 !py-9 !text-xl !font-bold !rounded-2xl"
           >
             Quero fechar com a RK
           </Button>

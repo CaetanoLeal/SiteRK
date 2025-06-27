@@ -9,7 +9,7 @@ const Testimonials = () => {
       <div className="container-custom">
         {/* Pre-title */}
         <div className="mb-4">
-          <p className="pre-title">
+          <p className="pre-title text-center">
             Nossos parceiros
           </p>
         </div>

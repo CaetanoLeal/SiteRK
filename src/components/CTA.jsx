@@ -4,14 +4,14 @@ const CTA = () => {
   return (
     <section className="section-padding bg-background">
       <div className="container-custom">
-        <div className="max-w-2xl mx-auto">
-          <div className="blue-gradient-border bg-white text-slate-900 p-12 rounded-xl text-center relative overflow-hidden">
+        <div className="max-w-8xl mx-auto">
+          <div className="bg-white text-slate-900 p-12 !rounded-3xl text-center relative overflow-hidden">
             {/* Subtle background gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent pointer-events-none"></div>
             
             <div className="relative z-10">
               {/* Label */}
-              <p className="text-primary font-medium mb-4">
+              <p className="text-white font-medium bg-black w-65 h-9 mx-auto text-center !rounded-3xl flex items-center justify-center">
                 Vamos juntos ser a próxima!
               </p>
               
@@ -27,9 +27,8 @@ const CTA = () => {
               </p>
               
               {/* CTA Button */}
-              <Button 
-                size="lg"
-                className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              <Button
+                className="btn-cta !px-38 !py-9 !text-xl !font-bold !rounded-2xl"
               >
                 Quero fechar com a RK
               </Button>

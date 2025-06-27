@@ -10,6 +10,12 @@ const Stats = () => {
   return (
     <section className="section-padding bg-gradient-to-b from-background to-card">
       <div className="container-custom">
+        {/* Pre-title */}
+        <div className="mb-4">
+          <p className="pre-title text-center">
+            A RK
+          </p>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div>
@@ -23,9 +29,8 @@ const Stats = () => {
               apaixonados por transformar marcas em<br />
               referências no mercado digital.
             </p>
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            <Button
+              className="btn-cta !px-38 !py-9 !text-xl !font-bold !rounded-2xl"
             >
               Contratar RK
             </Button>

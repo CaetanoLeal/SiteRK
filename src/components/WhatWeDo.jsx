@@ -1,7 +1,7 @@
 const WhatWeDo = () => {
   const services = [
     {
-      icon: "📈",
+      icon: "/images/icon1.png", // Caminho direto da imagem na pasta public
       title: "Estratégia & Aumento de",
       highlight: "Conversão",
       description: "Um plano 100% validado. Mais leads. Mais vendas. Mais resultados."
@@ -29,7 +29,7 @@ const WhatWeDo = () => {
             POR QUE RK?
           </p>
         </div>
-        
+
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight gradient-text">
@@ -47,9 +47,17 @@ const WhatWeDo = () => {
               <div className="whatwedo-card-content">
                 {/* Icon */}
                 <div className="whatwedo-icon">
-                  <span className="text-3xl">{service.icon}</span>
+                  {typeof service.icon === 'string' && service.icon.startsWith('/') ? (
+                    <img 
+                      src={service.icon} 
+                      alt={service.title}
+                      className="w-12 h-12 object-contain"
+                    />
+                  ) : (
+                    <span className="text-3xl">{service.icon}</span>
+                  )}
                 </div>
-                
+
                 {/* Content */}
                 <div className="whatwedo-text">
                   <h3 className="text-xl font-bold text-white mb-2 text-center leading-tight">
@@ -66,8 +74,7 @@ const WhatWeDo = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default WhatWeDo
-
+export default WhatWeDo;

@@ -30,7 +30,7 @@ const Hero = () => {
           </div>
 
           {/* Título principal */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-sora">
             Sua Marca no Topo: Estratégias<br />
             Inteligentes, <span className="gradient-text">Resultados Reais</span>
           </h1>
@@ -43,10 +43,8 @@ const Hero = () => {
           </p>
 
           {/* Botão CTA */}
-          <Button 
-            size="lg" 
-            className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-          >
+          <Button  
+            className="btn-cta !px-38 !py-9 !text-xl !font-bold !rounded-2xl">
             Contratar RK
           </Button>
 

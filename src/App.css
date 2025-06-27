@@ -20,7 +20,7 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
+  --color-accent: #0065ff;
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-border: var(--border);
@@ -177,7 +177,7 @@
   .whatwedo-card {
     @apply relative rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105;
     background: linear-gradient(135deg, #0c0c0e 0%, #131416 100%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
   
   .whatwedo-card-content {
@@ -185,7 +185,7 @@
   }
   
   .whatwedo-icon {
-    @apply w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6;
+    @apply w-16 h-16 flex items-center justify-center mx-auto;
   }
   
   .whatwedo-text {
@@ -226,10 +226,26 @@
 
   .pre-title{
     color: #9ca3af;
-    width: 125px;
+    width: 150px;
     background-color: #000000;
     border-bottom: solid 2px;
     border-right: solid 2px;
     border-color: #9ca3af;
+    border-radius: 100px;
+    border-bottom-right-radius: 100px ;
   }
+
+  .btn-cta {
+  background-image: linear-gradient(to right,  #00245b,  #0066ff);
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15),
+              0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
 }
