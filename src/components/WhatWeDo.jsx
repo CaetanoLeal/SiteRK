@@ -7,13 +7,13 @@ const WhatWeDo = () => {
       description: "Um plano 100% validado. Mais leads. Mais vendas. Mais resultados."
     },
     {
-      icon: "🎨",
+      icon: "/images/icon3.png",
       title: "Design Criativo &",
       highlight: "Responsivo",
       description: "Criamos designs únicos e responsivos que capturam a essência da sua marca e encantam seus clientes."
     },
     {
-      icon: "⚡",
+      icon: "/images/icon2.png",
       title: "Processo Rápido &",
       highlight: "Eficiente",
       description: "Nossos processos são otimizados para entregar resultados rápidos sem comprometer a qualidade."

@@ -1,11 +1,11 @@
 const Testimonials = () => {
   const clientLogos = [
-    { name: "Cliente 1", logo: "🏢" },
-    { name: "Cliente 2", logo: "🏪" }
+    { name: "Colégio Intelectual Bilingue", logo: "/images/company2.png" }, // Ícone 1
+    { name: "Cliente 2", logo: "/images/company1.png" }  // Ícone 3
   ]
 
   return (
-    <section className="section-padding bg-gradient-to-b from-card to-background">
+    <section className="section-padding from-card to-background">
       <div className="container-custom">
         {/* Pre-title */}
         <div className="mb-4">
@@ -34,9 +34,13 @@ const Testimonials = () => {
           {clientLogos.map((client, index) => (
             <div 
               key={index}
-              className="w-32 h-16 bg-muted/20 rounded-lg flex items-center justify-center text-2xl border border-border"
+              className="w-32 h-16 flex items-center justify-center text-2xl"
             >
-              {client.logo}
+              <img 
+                src={client.logo} 
+                alt={client.name} 
+                className="max-h-20 object-contain"
+              />
             </div>
           ))}
         </div>
@@ -67,4 +71,4 @@ const Testimonials = () => {
   )
 }
 
-export default Testimonials
+export default Testimonials;

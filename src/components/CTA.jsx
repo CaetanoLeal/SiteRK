@@ -12,7 +12,7 @@ const CTA = () => {
             <div className="relative z-10">
               {/* Label */}
               <p className="text-white font-medium bg-black w-65 h-9 mx-auto text-center !rounded-3xl flex items-center justify-center">
-                Vamos juntos ser a próxima!
+                Você pode ser o próximo!
               </p>
               
               {/* Title */}
