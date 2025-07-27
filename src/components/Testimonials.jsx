@@ -1,50 +1,7 @@
 const Testimonials = () => {
-  const clientLogos = [
-    { name: "Colégio Intelectual Bilingue", logo: "/images/company2.png" }, // Ícone 1
-    { name: "Cliente 2", logo: "/images/company1.png" }  // Ícone 3
-  ]
-
   return (
     <section className="section-padding from-card to-background">
       <div className="container-custom">
-        {/* Pre-title */}
-        <div className="mb-4">
-          <p className="pre-title text-center">
-            Nossos parceiros
-          </p>
-        </div>
-        
-        {/* Header */}
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            Empresas que Confiam<br />
-            Resultados que Comprovam
-          </h2>
-          <div className="max-w-4xl">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Quem está com a RK sabe: Aqui é onde a magia acontece e resultados<br />
-              reais são entregues. Veja o que nossos clientes têm a dizer sobre<br />
-              nossa parceria e os resultados que alcançamos juntos.
-            </p>
-          </div>
-        </div>
-        
-        {/* Client Logos */}
-        <div className="flex gap-8 mb-16">
-          {clientLogos.map((client, index) => (
-            <div 
-              key={index}
-              className="w-32 h-16 flex items-center justify-center text-2xl"
-            >
-              <img 
-                src={client.logo} 
-                alt={client.name} 
-                className="max-h-20 object-contain"
-              />
-            </div>
-          ))}
-        </div>
-        
         {/* Testimonial */}
         <div className="max-w-4xl">
           <blockquote className="text-base text-muted-foreground leading-relaxed mb-8 italic">
@@ -54,7 +11,7 @@ const Testimonials = () => {
             e sempre disponível para ajudar. Recomendo a RK para qualquer empresa que queira 
             crescer no digital."
           </blockquote>
-          
+
           {/* Author */}
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center text-xl">

@@ -16,8 +16,8 @@ const Footer = () => {
         }}
       ></div>
 
-      {/* Borda superior */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+      {/* Gradiente escuro sobre a imagem */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-transparent/100 z-0" />
 
       {/* Conteúdo principal com fundo preto estilizado */}
       <div className="relative z-10 section-padding">
@@ -45,7 +45,7 @@ const Footer = () => {
               {/* Botão CTA */}
               <Button 
                 size="lg"
-                className="bg-white text-primary px-8 py-4 text-lg font-semibold rounded-xl shadow-lg  hover:-translate-y-1"
+                className="bg-white text-primary px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:-translate-y-1"
               >
                 Quero fechar com a RK
               </Button>

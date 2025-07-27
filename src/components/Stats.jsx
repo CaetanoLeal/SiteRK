@@ -8,7 +8,7 @@ const Stats = () => {
   ]
 
   return (
-    <section className="section-padding bg-gradient-to-b from-background to-card">
+    <section className="section-padding to-card">
       <div className="container-custom">
         {/* Pre-title */}
         <div className="mb-4">
