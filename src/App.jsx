@@ -15,11 +15,11 @@ function App() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <Hero />
-      <Services />
       <WhatWeDo />
-      <Team />
-      <Results />
       <Testimonials />
+      <Services />
+      <Results />
+      <Team />
       <CTA />
       <Stats />
       <Footer />
