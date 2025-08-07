@@ -7,28 +7,28 @@ const Team = () => {
     {
       name: "Rique Costa",
       role: "Diretor e especialista de marketing",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=face",
+      image: "public/images/rique.png",
       description: "Com uma carreira sólida em estratégias de marketing e posicionamento de marca, Rique lidera com visão estratégica e foco em resultados. Atua na criação de campanhas de alto impacto que geram autoridade e conversão.",
       instagram: "@riquecosta__"
     },
     {
       name: "John",
       role: "Designer criativo",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=800&fit=crop&crop=face",
+      image: "public/images/jhon.jpg",
       description: "Designer apaixonado por inovação visual e experiência do usuário. John traduz conceitos em identidades visuais cativantes e funcionais, potencializando a percepção de valor de marcas e produtos.",
       instagram: "@jonathansilva.off"
     },
     {
       name: "Caetano Leal",
       role: "Programador e tecnologista",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=800&fit=crop&crop=face",
+      image: "public/images/caetano.jpg",
       description: "Especialista em dados e inteligência artificial. Caetano desenvolve soluções tecnológicas de ponta, com foco em automação, análise preditiva e integração inteligente para escalar negócios digitais.",
       instagram: "@caetanolealdev"
     },
     {
       name: "Tadashi Nori",
       role: "Chefe de atendimento",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=800&fit=crop&crop=face",
+      image: "public/images/tadashi.png",
       description: "Com empatia, eficiência e foco no cliente, Tadashi garante um atendimento humanizado, rápido e resolutivo. É o elo direto entre nossas soluções e a sua satisfação.",
       instagram: "@eutadashi_"
     }
@@ -128,7 +128,7 @@ const Team = () => {
         {/* CTA */}
         <div className="text-center">
           <Button className="btn-cta !px-38 !py-9 !text-xl !font-bold !rounded-2xl">
-            Conheça nossa metodologia
+            Conversar conosco
           </Button>
           <p className="text-sm text-muted-foreground mt-4">
             Descubra como trabalhamos para gerar resultados

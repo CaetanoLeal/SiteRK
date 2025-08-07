@@ -155,12 +155,15 @@ const Results = () => {
                 ].map((phase, index) => (
                   <div key={index} className="relative text-center group">
                     {/* Radar effect container */}
-                    <div className="relative flex items-center justify-center mx-auto w-28 h-28 circle-wave">
+                    <div className="relative flex items-center justify-center mx-auto w-30 h-30 circle-wave">
                       {/* Círculo externo fixo mais claro */}
-                      <div className="absolute w-full h-full rounded-full bg-blue-900/30 z-0" />
+                      <div className="absolute w-25 h-25 rounded-full bg-gradient-to-br from-blue-700 via-blue-900 to-blue-700 z-0" />
                       
                       {/* Círculo interno escuro com texto */}
-                      <div className="relative z-10 w-20 h-20 flex items-center justify-center rounded-full bg-blue-900 shadow-lg border-4 border-background text-white font-semibold text-base">
+                      <div
+                        className="relative z-10 w-22 h-22 flex items-center justify-center rounded-full shadow-lg text-white font-semibold text-base"
+                        style={{ backgroundColor: "#100051ff" }}
+                      >
                         {phase.title}
                       </div>
                     </div>
@@ -180,11 +183,8 @@ const Results = () => {
       {/* CTA */}
       <div className="text-center">
         <Button className="btn-cta !px-38 !py-9 !text-xl !font-bold !rounded-2xl">
-          Quero ver resultados
+          Quero ver esses resultados
         </Button>
-        <p className="text-sm text-muted-foreground mt-4">
-          Vamos analisar seu negócio e criar uma estratégia personalizada
-        </p>
       </div>
     </div>
   )

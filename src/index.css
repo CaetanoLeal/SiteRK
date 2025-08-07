@@ -4,8 +4,8 @@
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(124,58,237,0.4) 0%, rgba(59,130,246,0.1) 80%);
-  animation: wave-ping 2.5s ease-out infinite;
+  background: radial-gradient(circle, rgba(85, 85, 85, 0.8) 0%, rgba(59,130,246,0.1) 80%);
+  animation: wave-ping 4.5s ease-out infinite;
   z-index: 0;
 }
 

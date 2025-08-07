@@ -1,30 +1,44 @@
+'use client'
+
 import { Button } from '@/components/ui/button'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from 'recharts'
-import { TrendingUp, Target, Users, DollarSign, Zap, Award } from 'lucide-react'
+import {
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid
+} from 'recharts'
+import {
+  TrendingUp,
+  Target,
+  Users,
+  DollarSign
+} from 'lucide-react'
 
 const Results = () => {
   // Dados para os gráficos
   const salesData = [
-    { month: 'Jan', vendas: 45, leads: 120 },
-    { month: 'Fev', vendas: 52, leads: 140 },
-    { month: 'Mar', vendas: 61, leads: 165 },
-    { month: 'Abr', vendas: 74, leads: 190 },
-    { month: 'Mai', vendas: 89, leads: 220 },
-    { month: 'Jun', vendas: 95, leads: 245 }
-  ]
-
-  const conversionData = [
-    { name: 'Leads Qualificados', value: 68, color: '#3B82F6' },
-    { name: 'Propostas Enviadas', value: 45, color: '#8B5CF6' },
-    { name: 'Vendas Fechadas', value: 32, color: '#10B981' }
-  ]
+  { month: 'Jan', vendas: 24, leads: 120 },  // 20%
+  { month: 'Fev', vendas: 35, leads: 130 },  // 26.9%
+  { month: 'Mar', vendas: 50, leads: 140 },  // 35.7%
+  { month: 'Abr', vendas: 70, leads: 150 },  // 46.7%
+  { month: 'Mai', vendas: 95, leads: 160 },  // 59.4%
+  { month: 'Jun', vendas: 120, leads: 170 }  // 70.5%
+]
 
   const kpis = [
-    { label: "Aumento em Vendas", value: "247%", icon: TrendingUp, color: "text-green-400" },
-    { label: "Leads Qualificados", value: "1.2K+", icon: Users, color: "text-blue-400" },
-    { label: "ROI Médio", value: "340%", icon: DollarSign, color: "text-yellow-400" },
-    { label: "Taxa de Conversão", value: "32%", icon: Target, color: "text-purple-400" }
+    { label: "Aumento em Vendas", value: "247%", icon: TrendingUp, color: "text-blue-900"},
+    { label: "Leads Qualificados", value: "1.2K+", icon: Users, color: "text-blue-900" },
+    { label: "ROI Médio", value: "340%", icon: DollarSign, color: "text-blue-900" },
+    { label: "Taxa de Conversão", value: "32%", icon: Target, color: "text-blue-900" }
   ]
+
+  // Dados calculados para taxa de conversão
+  const conversionRateData = salesData.map(({ month, vendas, leads }) => ({
+    month,
+    conversao: parseFloat(((vendas / leads) * 100).toFixed(1))
+  }))
 
   return (
     <section className="section-padding bg-background">
@@ -49,23 +63,23 @@ const Results = () => {
         </div>
 
         {/* KPIs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
-          {kpis.map((kpi, index) => (
-            <div key={index} className="kpi-card group">
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-gray-700/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 text-center">
-                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-800/50 mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <kpi.icon className={`w-6 h-6 ${kpi.color}`} />
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+            {kpis.map((kpi, index) => (
+              <div key={index} className="kpi-card group">
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-gray-700/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 text-center">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-800/50 mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <kpi.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="text-3xl font-bold mb-2 text-blue-700">
+                    {kpi.value}
+                  </div>
+                  <p className="text-muted-foreground text-sm">
+                    {kpi.label}
+                  </p>
                 </div>
-                <div className={`text-3xl font-bold mb-2 ${kpi.color}`}>
-                  {kpi.value}
-                </div>
-                <p className="text-gray-300 text-sm">
-                  {kpi.label}
-                </p>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
         {/* Charts Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
@@ -80,12 +94,12 @@ const Results = () => {
                     <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
                     <XAxis dataKey="month" stroke="#9CA3AF" />
                     <YAxis stroke="#9CA3AF" />
-                    <Line 
-                      type="monotone" 
-                      dataKey="vendas" 
-                      stroke="#3B82F6" 
+                    <Line
+                      type="monotone"
+                      dataKey="vendas"
+                      stroke="#0c0076ff"
                       strokeWidth={3}
-                      dot={{ fill: '#3B82F6', strokeWidth: 2, r: 6 }}
+                      dot={{ fill: '#ffffffff', strokeWidth: 2, r: 6 }}
                     />
                   </LineChart>
                 </ResponsiveContainer>
@@ -93,19 +107,24 @@ const Results = () => {
             </div>
           </div>
 
-          {/* Conversion Funnel */}
+          {/* Conversion Rate Chart */}
           <div className="chart-card">
             <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-gray-700/50 backdrop-blur-sm">
-              <h3 className="text-2xl font-bold text-white mb-2">Funil de Conversão</h3>
-              <p className="text-gray-400 mb-6">Performance do processo de vendas</p>
+              <h3 className="text-2xl font-bold text-white mb-2">Taxa de Conversão</h3>
+              <p className="text-gray-400 mb-6">Evolução da conversão mês a mês</p>
               <div className="h-64">
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={conversionData} layout="horizontal">
+                  <LineChart data={conversionRateData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                    <XAxis type="number" stroke="#9CA3AF" />
-                    <YAxis dataKey="name" type="category" stroke="#9CA3AF" width={120} />
-                    <Bar dataKey="value" fill="#8B5CF6" radius={[0, 4, 4, 0]} />
-                  </BarChart>
+                    <YAxis stroke="#9CA3AF" domain={[0, 100]} tickFormatter={(val) => `${val}%`} />
+                    <Line
+                      type="monotone"
+                      dataKey="conversao"
+                      stroke="#0c0076ff"
+                      strokeWidth={3}
+                      dot={{ fill: '#ffffffff', strokeWidth: 2, r: 6 }}
+                    />
+                  </LineChart>
                 </ResponsiveContainer>
               </div>
             </div>
@@ -114,9 +133,7 @@ const Results = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <Button
-            className="btn-cta !px-38 !py-9 !text-xl !font-bold !rounded-2xl"
-          >
+          <Button className="btn-cta !px-38 !py-9 !text-xl !font-bold !rounded-2xl">
             Quero esses resultados
           </Button>
           <p className="text-sm text-muted-foreground mt-4">
@@ -129,4 +146,3 @@ const Results = () => {
 }
 
 export default Results
-
